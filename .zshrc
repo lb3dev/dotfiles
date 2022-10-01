@@ -1,6 +1,6 @@
 export HOMEBREW_NO_ANALYTICS=1
 
-function setPath {
+function set-path {
     MACOS_VERSION=$(sw_vers -productVersion)
 
     if [[ $MACOS_VERSION == 12.6 ]]; then
@@ -14,4 +14,4 @@ function yt-audio {
     yt-dlp -o "%(title)s-%(id)s.%(ext)s" --audio-format m4a --audio-quality 0 --extract-audio "$1"
 }
 
-setPath
+set-path

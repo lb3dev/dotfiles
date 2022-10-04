@@ -15,3 +15,6 @@ function yt-audio {
 }
 
 set-path
+
+alias ll="ls -al"
+alias reload="exec ${SHELL} -l"

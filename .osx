@@ -30,3 +30,10 @@ set -x
 
 # Prevent screen from sleeping at all
 pmset -a displaysleep 0
+
+###############################################################################
+# Finder                                                                      #
+###############################################################################
+
+# Don't hide Volumes folder in Finder
+sudo chflags nohidden /Volumes

@@ -10,6 +10,11 @@ function set-path {
     fi
 }
 
+function bup {
+    cd ~/.macos-setup/ansible-macos-backup
+    make all
+}
+
 function yt-audio {
     yt-dlp -o "%(title)s-%(id)s.%(ext)s" --audio-format m4a --audio-quality 0 --extract-audio "$1"
 }

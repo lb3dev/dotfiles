@@ -8,7 +8,7 @@ function set-path {
         PYTHON_VERSION=3.9
     fi
 
-    export PATH="/opt/homebrew/bin:$PATH"
+    export PATH="$PATH:/opt/homebrew/bin"
     export PATH="$HOME/Library/Python/$PYTHON_VERSION/bin:$PATH"
 }
 

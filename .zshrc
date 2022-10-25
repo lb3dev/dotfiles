@@ -2,12 +2,14 @@ export HOMEBREW_NO_ANALYTICS=1
 
 function set-path {
     MACOS_VERSION=$(sw_vers -productVersion)
+    PYTHON_VERSION=3.8
 
-    if [[ $MACOS_VERSION == 12.6 ]]; then
-        export PATH="$HOME/Library/Python/3.9/bin:/opt/homebrew/bin:$PATH"
-    else
-        export PATH="$HOME/Library/Python/3.8/bin:/opt/homebrew/bin:$PATH"
+    if [[ $MACOS_VERSION == 12.6 || $MACOS_VERSION == 12.6.1 ]]; then
+        PYTHON_VERSION=3.9
     fi
+
+    export PATH="/opt/homebrew/bin:$PATH"
+    export PATH="$HOME/Library/Python/$PYTHON_VERSION/bin:$PATH"
 }
 
 function bup {

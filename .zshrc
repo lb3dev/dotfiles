@@ -1,5 +1,9 @@
 export HOMEBREW_NO_ANALYTICS=1
 
+function venv-ansible {
+    source ~/.macos-setup/venv-ansible/bin/activate
+}
+
 function set-path {
     MACOS_VERSION=$(sw_vers -productVersion)
     PYTHON_VERSION=3.8
@@ -13,6 +17,7 @@ function set-path {
 }
 
 function bup {
+    venv-ansible
     cd ~/.macos-setup/ansible-macos-backup
     make all
 }

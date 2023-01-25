@@ -5,10 +5,10 @@ function venv-ansible {
 }
 
 function set-path {
-    MACOS_VERSION=$(sw_vers -productVersion)
+    MACOS_VERSION=$(sw_vers -productVersion | cut -d '.' -f1,2)
     PYTHON_VERSION=3.8
 
-    if [[ $MACOS_VERSION -gt 12.6 ]]; then
+    if [[ $MACOS_VERSION == 12.6 ]]; then
         PYTHON_VERSION=3.9
     fi
 

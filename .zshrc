@@ -17,10 +17,16 @@ function set-path {
     export PATH="/opt/homebrew/opt/qt@5/bin:$PATH"
 }
 
-function bup {
+function backup-all {
     venv-ansible
     cd ~/.macos-setup/ansible-macos-backup
     make all
+}
+
+function backup-firefox {
+    venv-ansible
+    cd ~/.macos-setup/ansible-macos-backup
+    make firefox
 }
 
 function macos-setup {

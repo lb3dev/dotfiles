@@ -1,4 +1,5 @@
 export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_AUTO_UPDATE_SECS=604800
 
 function venv-ansible {
     source ~/.macos-setup/venv-ansible/bin/activate

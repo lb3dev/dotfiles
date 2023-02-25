@@ -21,18 +21,21 @@ function backup-all {
     venv-ansible
     cd ~/.macos-setup/ansible-macos-backup
     make all
+    deactivate
 }
 
 function backup-firefox {
     venv-ansible
     cd ~/.macos-setup/ansible-macos-backup
     make firefox
+    deactivate
 }
 
 function macos-setup {
     venv-ansible
     cd ~/.macos-setup/ansible-macos-setup
     make run
+    deactivate
 }
 
 function yt-audio {

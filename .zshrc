@@ -19,7 +19,6 @@ function set-path {
 
     export PATH="$PATH:/opt/homebrew/bin"
     export PATH="$HOME/Library/Python/$PYTHON_VERSION/bin:$PATH"
-    export PATH="/opt/homebrew/opt/qt@5/bin:$PATH"
 }
 
 function backup-all {

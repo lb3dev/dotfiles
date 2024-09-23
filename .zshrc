@@ -13,9 +13,11 @@ function venv-ansible {
 
 function set-path {
     MACOS_VERSION=$(sw_vers -productVersion | cut -d '.' -f1,2)
+    BASE_MACOS_VERSION="12.5"
     PYTHON_VERSION=3.8
 
-    if [[ $MACOS_VERSION == 12.6 ]]; then
+    # Python 3.9 is the default version installed with macOS 12.5+
+    if [ $(echo -e "$MACOS_VERSION\n$BASE_MACOS_VERSION" | sort -V | tail -1) == "$MACOS_VERSION" ]; then
         PYTHON_VERSION=3.9
     fi
 

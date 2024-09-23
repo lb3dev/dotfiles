@@ -17,7 +17,7 @@ function set-path {
     PYTHON_VERSION=3.8
 
     # Python 3.9 is the default version installed with macOS 12.5+
-    if [ $(echo -e "$MACOS_VERSION\n$BASE_MACOS_VERSION" | sort -V | tail -1) == "$MACOS_VERSION" ]; then
+    if [[ $(echo -e "$MACOS_VERSION\n$BASE_MACOS_VERSION" | sort -V | tail -1) == "$MACOS_VERSION" ]]; then
         PYTHON_VERSION=3.9
     fi
 

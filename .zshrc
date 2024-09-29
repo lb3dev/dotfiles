@@ -16,6 +16,9 @@ function venv-ansible {
 }
 
 function backup-all {
+    CURR_DATE=$(date +%Y-%m-%d-%H%M%S)
+    export ANSIBLE_LOG_PATH="$SETUP_DIR/backup-$CURR_DATE.log"
+
     venv-ansible
     cd "$SETUP_DIR/ansible-macos-backup"
     make all

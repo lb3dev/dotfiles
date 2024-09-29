@@ -1,6 +1,8 @@
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_AUTO_UPDATE_SECS=604800
 
+PROMPT='%F{99}%n@%f %F{114}%*%f %F{75}%~%f %F{99}>%f '
+
 SETUP_DIR=~/.setup
 
 function brew-all {

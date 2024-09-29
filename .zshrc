@@ -22,13 +22,6 @@ function backup-all {
     deactivate
 }
 
-function backup-firefox {
-    venv-ansible
-    cd "$SETUP_DIR/ansible-macos-backup"
-    make firefox
-    deactivate
-}
-
 function yt-audio {
     yt-dlp -o "%(title)s-%(id)s.%(ext)s" --audio-format m4a --audio-quality 0 --extract-audio "$1"
 }

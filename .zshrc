@@ -26,6 +26,16 @@ function backup-all {
     deactivate
 }
 
+function backup-firefox {
+    CURR_DATE=$(date +%Y-%m-%d-%H%M%S)
+    export ANSIBLE_LOG_PATH="$SETUP_BACKUP_LOGS_DIR/firefox-$CURR_DATE.log"
+
+    venv-ansible
+    cd "$SETUP_DIR/ansible-macos-backup"
+    make firefox
+    deactivate
+}
+
 function yt-audio {
     yt-dlp -o "%(title)s-%(id)s.%(ext)s" --audio-format m4a --audio-quality 0 --extract-audio "$1"
 }

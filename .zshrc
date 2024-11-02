@@ -31,4 +31,5 @@ function yt-audio {
 }
 
 alias ll="ls -al"
+alias diff-all="diff -x .DS_Store -rq"
 alias reload="exec ${SHELL} -l"

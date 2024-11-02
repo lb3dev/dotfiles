@@ -6,7 +6,7 @@ export HOMEBREW_AUTO_UPDATE_SECS=604800
 PROMPT='%F{99}%n@%f %F{114}%*%f %F{75}%~%f %F{99}>%f '
 
 SETUP_DIR=~/.setup
-SETUP_LOGS_DIR="$SETUP_DIR/logs"
+SETUP_BACKUP_LOGS_DIR="$SETUP_DIR/logs/backup"
 
 function brew-all {
     brew update && brew upgrade && brew autoremove && brew cleanup
@@ -18,7 +18,7 @@ function venv-ansible {
 
 function backup-all {
     CURR_DATE=$(date +%Y-%m-%d-%H%M%S)
-    export ANSIBLE_LOG_PATH="$SETUP_LOGS_DIR/backup-$CURR_DATE.log"
+    export ANSIBLE_LOG_PATH="$SETUP_BACKUP_LOGS_DIR/backup-$CURR_DATE.log"
 
     venv-ansible
     cd "$SETUP_DIR/ansible-macos-backup"

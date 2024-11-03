@@ -8,10 +8,6 @@ PROMPT='%F{99}%n@%f %F{114}%*%f %F{75}%~%f %F{99}>%f '
 SETUP_DIR=~/.setup
 SETUP_BACKUP_LOGS_DIR="$SETUP_DIR/logs/backup"
 
-function brew-all {
-    brew update && brew upgrade && brew autoremove && brew cleanup
-}
-
 function venv-ansible {
     source "$SETUP_DIR/venv-ansible/bin/activate"
 }
@@ -42,6 +38,7 @@ function yt-audio {
 
 alias brew-zap="brew uninstall --zap"
 alias brew-clean="brew autoremove && brew cleanup -s"
+alias brew-all="brew update && brew upgrade && brew autoremove && brew cleanup -s"
 
 alias ll="ls -al"
 alias diff-all="diff -x .DS_Store -rq"

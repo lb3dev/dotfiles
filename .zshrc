@@ -8,26 +8,21 @@ PROMPT='%F{99}%n@%f %F{114}%*%f %F{75}%~%f %F{99}>%f '
 SETUP_DIR=~/.setup
 SETUP_BACKUP_LOGS_DIR="$SETUP_DIR/logs/backup"
 
-function venv-ansible {
+function setup-ansible-backup {
+    CURR_DATE=$(date +%Y-%m-%d-%H%M%S)
+    export ANSIBLE_LOG_PATH="$SETUP_BACKUP_LOGS_DIR/backup-$CURR_DATE.log"
     source "$SETUP_DIR/venv-ansible/bin/activate"
+    cd "$SETUP_DIR/ansible-macos-backup"
 }
 
 function backup-all {
-    CURR_DATE=$(date +%Y-%m-%d-%H%M%S)
-    export ANSIBLE_LOG_PATH="$SETUP_BACKUP_LOGS_DIR/backup-$CURR_DATE.log"
-
-    venv-ansible
-    cd "$SETUP_DIR/ansible-macos-backup"
+    setup-ansible-backup
     make all
     deactivate
 }
 
 function backup-firefox {
-    CURR_DATE=$(date +%Y-%m-%d-%H%M%S)
-    export ANSIBLE_LOG_PATH="$SETUP_BACKUP_LOGS_DIR/firefox-$CURR_DATE.log"
-
-    venv-ansible
-    cd "$SETUP_DIR/ansible-macos-backup"
+    setup-ansible-backup
     make firefox
     deactivate
 }

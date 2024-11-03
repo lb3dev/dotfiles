@@ -6,13 +6,27 @@ export HOMEBREW_AUTO_UPDATE_SECS=604800
 PROMPT='%F{99}%n@%f %F{114}%*%f %F{75}%~%f %F{99}>%f '
 
 SETUP_DIR=~/.setup
+SETUP_LOGS_DIR="$SETUP_DIR/logs"
 SETUP_BACKUP_LOGS_DIR="$SETUP_DIR/logs/backup"
+
+function setup-ansible-setup {
+    CURR_DATE=$(date +%Y-%m-%d-%H%M%S)
+    export ANSIBLE_LOG_PATH="$SETUP_LOGS_DIR/ansible-$CURR_DATE.log"
+    source "$SETUP_DIR/venv-ansible/bin/activate"
+    cd "$SETUP_DIR/ansible-macos-setup"
+}
 
 function setup-ansible-backup {
     CURR_DATE=$(date +%Y-%m-%d-%H%M%S)
     export ANSIBLE_LOG_PATH="$SETUP_BACKUP_LOGS_DIR/backup-$CURR_DATE.log"
     source "$SETUP_DIR/venv-ansible/bin/activate"
     cd "$SETUP_DIR/ansible-macos-backup"
+}
+
+function setup-dotfiles {
+    setup-ansible-setup
+    make dotfiles
+    deactivate
 }
 
 function backup-all {

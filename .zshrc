@@ -19,11 +19,14 @@ function run-ansible-setup {
     deactivate
 }
 
-function setup-ansible-backup {
+function run-ansible-backup {
     CURR_DATE=$(date +%Y-%m-%d-%H%M%S)
-    export ANSIBLE_LOG_PATH="$SETUP_BACKUP_LOGS_DIR/backup-$CURR_DATE.log"
+    export ANSIBLE_LOG_PATH="$SETUP_BACKUP_LOGS_DIR/$1-$CURR_DATE.log"
+
     source "$SETUP_DIR/venv-ansible/bin/activate"
     cd "$SETUP_DIR/ansible-macos-backup"
+    make "$1"
+    deactivate
 }
 
 function setup-terminal {
@@ -35,15 +38,11 @@ function setup-dotfiles {
 }
 
 function backup-all {
-    setup-ansible-backup
-    make all
-    deactivate
+    run-ansible-backup all
 }
 
 function backup-firefox {
-    setup-ansible-backup
-    make firefox
-    deactivate
+    run-ansible-backup firefox
 }
 
 function yt-audio {

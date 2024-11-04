@@ -45,7 +45,7 @@ function yt-audio {
     yt-dlp -o "%(title)s-%(id)s.%(ext)s" --audio-format m4a --audio-quality 0 --extract-audio "$1"
 }
 
-alias brew-zap="brew uninstall --zap"
+alias brew-zap="brew uninstall --zap --force"
 alias brew-clean="brew autoremove && brew cleanup -s"
 alias brew-all="brew update && brew upgrade && brew autoremove && brew cleanup -s"
 

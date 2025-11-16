@@ -41,6 +41,10 @@ function setup-dotfiles {
     run-ansible-setup dotfiles
 }
 
+function setup-backup {
+    run-ansible-setup backup
+}
+
 function backup-all {
     run-ansible-backup all
 }

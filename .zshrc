@@ -9,11 +9,15 @@ SETUP_DIR=~/.setup
 SETUP_LOGS_DIR="$SETUP_DIR/logs"
 SETUP_BACKUP_LOGS_DIR="$SETUP_DIR/logs/backup"
 
+function venv-setup {
+    source "$SETUP_DIR/venv-ansible/bin/activate"
+}
+
 function run-ansible-setup {
     CURR_DATE=$(date +%Y-%m-%d-%H%M%S)
     export ANSIBLE_LOG_PATH="$SETUP_LOGS_DIR/$1-$CURR_DATE.log"
 
-    source "$SETUP_DIR/venv-ansible/bin/activate"
+    venv-setup
     cd "$SETUP_DIR/ansible-macos-setup"
     make "$1"
     deactivate
@@ -23,7 +27,7 @@ function run-ansible-backup {
     CURR_DATE=$(date +%Y-%m-%d-%H%M%S)
     export ANSIBLE_LOG_PATH="$SETUP_BACKUP_LOGS_DIR/$1-$CURR_DATE.log"
 
-    source "$SETUP_DIR/venv-ansible/bin/activate"
+    venv-setup
     cd "$SETUP_DIR/ansible-macos-backup"
     make "$1"
     deactivate

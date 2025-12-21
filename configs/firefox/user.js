@@ -30,11 +30,6 @@ user_pref("browser.newtabpage.activity-stream.showSponsored", false); // [FF58+]
 user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false); // [FF83+] Sponsored shortcuts
 user_pref("browser.newtabpage.activity-stream.showSponsoredCheckboxes", false); // [FF140+] Support Firefox
 
-user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
-user_pref("browser.newtabpage.activity-stream.feeds.topsites", false);
-user_pref("browser.newtabpage.activity-stream.showSearch", false);
-user_pref("browser.newtabpage.activity-stream.showWeather", false);
-
 /** RECOMMENDATIONS ***/
 /* 0320: disable recommendation pane in about:addons (uses Google Analytics) ***/
 user_pref("extensions.getAddons.showPane", false); // [HIDDEN PREF]
@@ -56,12 +51,6 @@ user_pref("browser.newtabpage.activity-stream.telemetry", false);
  * [SETTING] Privacy & Security>Logins and Passwords>Ask to save logins and passwords for websites ***/
 user_pref("signon.rememberSignons", false);
 
-/** Additional saving passwords settings ***/
-user_pref("signon.autofillForms", false);
-user_pref("signon.firefoxRelay.feature", "disabled");
-user_pref("signon.generation.enabled", false);
-user_pref("signon.management.page.breach-alerts.enabled", false);
-
 /* 5017: disable Form Autofill
  * If .supportedCountries includes your region (browser.search.region) and .supported
  * is "detect" (default), then the UI will show. Stored data is not secure, uses JSON
@@ -80,6 +69,22 @@ user_pref("datareporting.healthreport.uploadEnabled", false);
 /* Custom: disable Usage Pings
  * [SETTING] Privacy & Security>Firefox Data Collection and Use>Send daily usage ping to Mozilla ***/
 user_pref("datareporting.usage.uploadEnabled", false);
+
+/* ------------------- CUSTOM MODIFICATIONS ------------------- */
+
+/* Extending 0105: disable sponsored content on Firefox Home (Activity Stream)
+ * [SETTING] Home>Firefox Home Content ***/
+user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
+user_pref("browser.newtabpage.activity-stream.feeds.topsites", false);
+user_pref("browser.newtabpage.activity-stream.showSearch", false);
+user_pref("browser.newtabpage.activity-stream.showWeather", false);
+
+/* Extending 5003: disable saving passwords
+ * [SETTING] Privacy & Security>Logins and Passwords>Ask to save logins and passwords for websites ***/
+user_pref("signon.autofillForms", false);
+user_pref("signon.firefoxRelay.feature", "disabled");
+user_pref("signon.generation.enabled", false);
+user_pref("signon.management.page.breach-alerts.enabled", false);
 
 /* Dark mode ***/
 user_pref("layout.css.prefers-color-scheme.content-override", 0);

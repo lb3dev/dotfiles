@@ -111,3 +111,6 @@ user_pref("browser.ml.linkPreview.longPress", false);
 
 /* Disable link previews ***/
 user_pref("browser.ml.linkPreview.enabled", false);
+
+/* Disable all check default browsers ***/
+user_pref("browser.shell.checkDefaultBrowser", false);

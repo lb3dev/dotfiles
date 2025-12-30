@@ -30,10 +30,132 @@
         {
           "title": "Google",
           "index": 0,
-          "id": 12,
           "typeCode": 1,
           "type": "text/x-moz-place",
           "uri": "https://www.google.com/"
+        },
+        {
+          "title": "YouTube",
+          "index": 1,
+          "typeCode": 1,
+          "type": "text/x-moz-place",
+          "uri": "https://www.youtube.com/"
+        },
+        {
+          "title": "Wiki",
+          "index": 2,
+          "typeCode": 1,
+          "type": "text/x-moz-place",
+          "uri": "https://en.wikipedia.org/wiki/Main_Page"
+        },
+        {
+          "title": "Software",
+          "index": 3,
+          "typeCode": 2,
+          "type": "text/x-moz-place-container",
+          "children":
+          [
+            {
+              "title": "IPinfo.io",
+              "index": 0,
+              "typeCode": 1,
+              "type": "text/x-moz-place",
+              "uri": "https://ipinfo.io/what-is-my-ip"
+            },
+            {
+              "title": "Setup",
+              "index": 1,
+              "typeCode": 2,
+              "type": "text/x-moz-place-container",
+              "children":
+              [
+                {
+                  "title": "Homebrew",
+                  "index": 0,
+                  "typeCode": 1,
+                  "type": "text/x-moz-place",
+                  "uri": "https://brew.sh/"
+                },
+                {
+                  "title": "lb3dev/android-pixel-setup",
+                  "index": 1,
+                  "typeCode": 1,
+                  "type": "text/x-moz-place",
+                  "uri": "https://github.com/lb3dev/android-pixel-setup"
+                },
+                {
+                  "title": "lb3dev/ansible-macos-backup",
+                  "index": 2,
+                  "typeCode": 1,
+                  "type": "text/x-moz-place",
+                  "uri": "https://github.com/lb3dev/ansible-macos-backup"
+                },
+                {
+                  "title": "lb3dev/ansible-macos-setup",
+                  "index": 3,
+                  "typeCode": 1,
+                  "type": "text/x-moz-place",
+                  "uri": "https://github.com/lb3dev/ansible-macos-setup"
+                },
+                {
+                  "title": "b3dev/dotfiles",
+                  "index": 4,
+                  "typeCode": 1,
+                  "type": "text/x-moz-place",
+                  "uri": "https://github.com/lb3dev/dotfiles"
+                },
+                {
+                  "title": "Geerling",
+                  "index": 5,
+                  "typeCode": 2,
+                  "type": "text/x-moz-place-container",
+                  "children":
+                  [
+                    {
+                      "title": "geerlingguy/mac-dev-playbook",
+                      "index": 0,
+                      "typeCode": 1,
+                      "type": "text/x-moz-place",
+                      "uri": "https://github.com/geerlingguy/mac-dev-playbook"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "macOS",
+              "index": 2,
+              "typeCode": 2,
+              "type": "text/x-moz-place-container",
+              "children":
+              [
+                {
+                  "title": "Apple Silicon M1/M2 macOS IPSW Firmware Restore Files Database",
+                  "index": 0,
+                  "typeCode": 1,
+                  "type": "text/x-moz-place",
+                  "uri": "https://mrmacintosh.com/apple-silicon-m1-full-macos-restore-ipsw-firmware-files-database/"
+                }
+              ]
+            },
+            {
+              "title": "Adblock",
+              "index": 3,
+              "typeCode": 2,
+              "type": "text/x-moz-place-container",
+              "children":
+              [
+                {
+                  "title": "uBlock Origin - Firefox",
+                  "index": 0,
+                  "typeCode": 1,
+                  "iconUri": "https://addons.mozilla.org/favicon.ico?v=3",
+                  "type": "text/x-moz-place",
+                  "uri": "https://addons.mozilla.org/en-CA/firefox/addon/ublock-origin/"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
